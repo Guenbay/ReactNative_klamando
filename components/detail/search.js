@@ -15,15 +15,14 @@ export const SearchComponent = () => {
 const styles = StyleSheet.create({
 
     textInput: {
-      backgroundColor: "white",
-      height: 40,
-      padding: 10,
-      borderRadius: 6,
-      borderWidth: 2,
-      marginTop: 16,
-      marginLeft: 30,
-      marginRight: 30,
-      marginBottom: 550,
-    },
-  
+        flex: 1,
+        backgroundColor: "white",
+        height: 40,
+        padding: 10,
+        borderRadius: 6,
+        borderWidth: 2,
+        marginTop: 20,
+        marginLeft: 30,
+        marginRight: 30,
+      },
   });

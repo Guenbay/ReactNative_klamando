@@ -1,26 +1,28 @@
 import { StatusBar } from 'expo-status-bar';
-import { ImageBackground, StyleSheet, Button, Text, View, TextInput, Image, Pressable } from 'react-native';
+import { ImageBackground, StyleSheet, Button, Text, View, Image, Pressable } from 'react-native';
 import { SearchComponent } from '../../components/detail/search';
+import { CreditComment } from '../../components/detail/creativeCredit';
 
-
-const HomeScreen = () => {
+export const HomeScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
+      <StatusBar style="auto" />
       <ImageBackground source={require('../../assets/landschaft.jpg')} resizeMode="cover" style={styles.backroundimage} >
        
         <SearchComponent />
         
-        <View>    
-          <Button title="Info " onPress={"link zu Infoseite"}></Button>
+        <View style={{flex: 2, marginTop: 500}}>    
+            <Button 
+              title="Zur Infoseite " 
+              onClick={() => navigation.navigate("Info")} 
+              >
+            </Button>
         </View>
 
-        <View style={{marginLeft: 12, marginRight: 12}}>
-          <Text style={styles.text}>Willkomen auf der Wetter-App Klamando</Text> 
-          <Text style={styles.text}>created by Lina, Ziko, Günbay</Text>
-        </View>
+        <CreditComment />
+        
 
       </ImageBackground>
-      <StatusBar style="auto" />
     </View>
   );
 }
@@ -34,30 +36,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  textInput: {
-    backgroundColor: "white",
-    height: 40,
-    padding: 10,
-    borderRadius: 6,
-    borderWidth: 2,
-    marginTop: 16,
-    marginLeft: 30,
-    marginRight: 30,
-    marginBottom: 550,
-  },
+
   backroundimage: {
     flex: 1,
     justifyContent: 'center',
     opacity: 1,
     
   },
-  text: {
-    color: "black",
-    fontSize: 20,
-    fontWeight: "700",
-    
-  },
+
 
 });
 
-export default HomeScreen;

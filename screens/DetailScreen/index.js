@@ -1,34 +1,22 @@
 import React from 'react';
-import {StyleSheet, Text, SafeAreaView, ScrollView, StatusBar, Image} from 'react-native';
-import { DetailComponent } from '../../components/detail/details';
+import {StyleSheet, Text, SafeAreaView, ScrollView, StatusBar, Button} from 'react-native';
+import { DetailComponent } from '../../components/detail/details'
 
-const DetailScreen = () => {
+export const DetailScreen = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollView}>
         <Text style={{fontSize: 40}}>
-          Verschiedene Anziehsachen
+          Verschiedene Anziehsachen | DetailsScreen
         </Text>
 
         <DetailComponent />
         <DetailComponent />
-        <DetailComponent />
-        <DetailComponent />
-        <DetailComponent />
-        <DetailComponent />
-        <DetailComponent />
-        <DetailComponent />
-        <DetailComponent />
-        <DetailComponent />
-        <DetailComponent />
-        <DetailComponent />
-        <DetailComponent />
-        <DetailComponent />
-        <DetailComponent />
-        <DetailComponent />
-        <DetailComponent />
-        <DetailComponent />
-        <DetailComponent />
+
+        <Button 
+          title="Go to Info..."
+          onPress={() => navigation.navigate("Home")}
+        />
 
       </ScrollView>
     </SafeAreaView>
@@ -48,4 +36,3 @@ const styles = StyleSheet.create({
   },
 });
 
-export default DetailScreen;
